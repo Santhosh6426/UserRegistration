@@ -1,7 +1,7 @@
 echo "Welcome to User Registration program"
 #!/bin/bash
 fun() {
-	if [[ $1 =~ $pattern ]]
+	if [[ $1 == $pattern ]]
 	then
 		echo "Valid"
 	else
@@ -20,3 +20,10 @@ fun $email
 pattern="^(9?1?)[:space:]?[0-9]{10}$"
 read -p "Enter 10 digit mobile number : " mob
 fun $mob
+read -p "Enter your password : " pass
+if [[ ${#pass} -ge 8 && "$pass" == *[[:lower:]]* && "$pass" == *[[:upper:]]* && "$pass" == *[0-9]* && "$pass" == *[@#%^*'$''&']* ]]
+then
+	echo "valid Password!"
+else
+	echo "invalid Password!"
+fi
