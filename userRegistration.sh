@@ -1,7 +1,7 @@
 echo "Welcome to User Registration program"
 #!/bin/bash
 fun() {
-	if [[ $1 == $pattern ]]
+	if [[ $1 =~ $pattern ]]
 	then
 		echo "Valid"
 	else
